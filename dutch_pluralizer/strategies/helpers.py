@@ -1,9 +1,8 @@
 import re
-from re import Pattern
 from typing import AnyStr
 
 
-def create_ends_with_regex(*args: str) -> Pattern:
+def create_ends_with_regex(*args: str):
     s = "|".join(map(re.escape, args))
     s = f"({s})$"
     return re.compile(s)
